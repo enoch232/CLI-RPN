@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'calculators/calculate'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'calculators#home'
+  post '/calculate' => 'calculators#calculate'
+
 end

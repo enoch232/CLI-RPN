@@ -19,6 +19,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'pry'
+gem 'pry-nav'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
