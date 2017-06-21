@@ -6,17 +6,17 @@ class CalculatorsController < ApplicationController
   end
 
   def calculate
-    if params[:expression_type] == "RPN"
-      expression = RpnExpression.new(expression_params)
+    begin
+      expression = case params[:expression_type]
+      when "RPN"
+        RpnExpression.new(expression_params)
+      end
+      expression.result = expression.evaluate
+    rescue => e
+      return render json: { message: "Something went wrong saving the expression", error: e }, status: :unprocessible_entity
     end
-    expression.result = expression.evaluate
-    if expression.save
-      # TODO: need to update expression's result.
-      return render json: { message: "Successfully calculated", result: expression.result }, status: :ok
-    else
-      return render json: { message: "Something went wrong saving the expression", error: expression.errors }, status: :unprocessible_entity
-    end
-
+    return render json: { message: "Something went wrong saving the expression", error: expression.errors }, status: :unprocessible_entity unless expression.save
+    render json: { message: "Successfully calculated", result: expression.result }, status: :ok
   end
 
   private
