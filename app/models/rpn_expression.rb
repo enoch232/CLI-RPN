@@ -1,0 +1,2 @@
+class RpnExpression < ApplicationRecord
+end
