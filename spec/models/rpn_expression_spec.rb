@@ -26,7 +26,7 @@ describe RpnExpression, type: :model do
     context "when calculating division" do
       it "evaluates correctly" do
         rpn_expression = RpnExpression.new( { expression: "5 2 /" } )
-        expect(rpn_expression.evaluate).to eq(5.0/2.0)
+        expect(rpn_expression.evaluate).to eq(5.0 / 2.0)
       end
     end
   end
