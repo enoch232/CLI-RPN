@@ -1,27 +1,28 @@
 class Homescreen extends React.Component {
+  constructor(props){
+    super(props)
+  }
+  componentDidMount(){
+    // TODO: make API calls here to evaluate expression, and modify the state from here.
+  }
   render(){
     return (
-      <div>
-        <div>
+      <div className = "container">
+        <div className = "title-container">
           CLI RPN Calculator
         </div>
-        <div>
-          <div>
-            tab
-            <div>
-              exit button
+        <div className = "console-container">
+          <div className = "tab">
+            <div className = "exit-button">
             </div>
-            <div>
-              minimize
+            <div className = "minimize-button">
             </div>
-            <div>
-              maximize
+            <div className = "maximize-button">
             </div>
-          </div>
-          <div>
-            console
           </div>
 
+          <div className = "console">
+          </div>
         </div>
 
       </div>
