@@ -5,7 +5,7 @@ class CalculatorsController < ApplicationController
   def home
   end
 
-  def calculate
+  def evaluate
     begin
       expression = case params[:expression_type]
       when "RPN"

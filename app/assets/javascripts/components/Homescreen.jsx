@@ -20,11 +20,10 @@ class Homescreen extends React.Component {
             <div className = "maximize-button">
             </div>
           </div>
-
           <div className = "console">
+            <input></input>
           </div>
         </div>
-
       </div>
     )
   }
