@@ -31,7 +31,7 @@ describe RpnExpression, type: :model do
 
       it "returns error when dividing by zero" do
         rpn_expression = RpnExpression.new( { expression: "5 0 /" } )
-        expect(rpn_expression.evaluate).to raise_error(ZeroDivisionError)
+        expect{ rpn_expression.evaluate }.to raise_error(ZeroDivisionError)
       end
     end
   end
