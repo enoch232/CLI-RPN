@@ -28,8 +28,8 @@ class Homescreen extends React.Component {
       ).then((responseJson) => {
         if (responseJson.result){
           this.setState({expression: ""})
-          this.setState({...state, history: this.state.history.concat(result.result)})
-          this.scrollToBottom()
+          this.setState({...this.state, history: this.state.history.concat(responseJson.result)})
+          this._scrollToBottom()
         } else if (responseJson.error){
           alert(responseJson.message)
         } else {
@@ -40,6 +40,11 @@ class Homescreen extends React.Component {
       })
 
     }
+  }
+
+  _scrollToBottom() {
+    let node = ReactDOM.findDOMNode(this.consoleEnd)
+    node.scrollIntoView({block: "end", behavior: "smooth"})
   }
 
   render(){
@@ -58,8 +63,22 @@ class Homescreen extends React.Component {
             </div>
           </div>
           <div className = "console">
-            <div ref={(el) => {this.messagesEnd = el}} style={ {float:"left", clear: "both"} }></div>
-            <span className = "console-carrot">> </span><input className = "console-input" value = {this.state.expression} onChange = {(e)=> this.setState({expression: e.target.value})} onKeyPress = {this._handleKeyPress.bind(this)}/>
+            {this.state.history.map((result, index)=>{
+              if (index == this.state.history.length - 1){
+                return (<div key = {index} className = "lastResult">
+                  {result}
+                </div>)
+              } else {
+                return (<div key = {index} className = "result">
+                  {result}
+                </div>)
+              }
+            })}
+            <div ref={(el) => {this.consoleEnd = el}} className = "console-input-point">
+              <span className = "console-carrot">> </span>
+              <input className = "console-input" value = {this.state.expression} onChange = {(e)=> this.setState({expression: e.target.value})} onKeyPress = {this._handleKeyPress.bind(this)}>
+              </input>
+            </div>
           </div>
         </div>
       </div>
