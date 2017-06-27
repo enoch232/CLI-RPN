@@ -26,6 +26,7 @@ class RpnExpression < ApplicationRecord
       elsif terminal == "/"
         second_terminal = terminal_stack.pop
         first_terminal = terminal_stack.pop
+        raise ZeroDivisionError if second_terminal.to_f.zero?
         terminal_stack.push(first_terminal.to_f / second_terminal.to_f)
       end
     end
