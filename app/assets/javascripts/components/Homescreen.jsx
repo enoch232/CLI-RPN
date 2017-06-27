@@ -1,10 +1,47 @@
 class Homescreen extends React.Component {
   constructor(props){
     super(props)
+    this.state = {
+      expression: "",
+      expressionType: "RPN",
+      history: []
+    }
   }
-  componentDidMount(){
-    // TODO: make API calls here to evaluate expression, and modify the state from here.
+
+  _handleKeyPress(e){
+    if (e.key == "Enter"){
+      fetch(
+        '/evaluate',
+        {
+          method: 'POST',
+    			headers: {
+    			  'Accept':"application/json",
+    			  'Content-Type': 'application/json',
+    			},
+          body: JSON.stringify({
+            expression: this.state.expression,
+            expression_type: this.state.expressionType
+          })
+        }
+      ).then((response) =>
+        response.json()
+      ).then((responseJson) => {
+        if (responseJson.result){
+          this.setState({expression: ""})
+          this.setState({...state, history: this.state.history.concat(result.result)})
+          this.scrollToBottom()
+        } else if (responseJson.error){
+          alert(responseJson.message)
+        } else {
+          alert("Something went wrong!")
+        }
+      }).catch((error)=>{
+        console.log(error)
+      })
+
+    }
   }
+
   render(){
     return (
       <div className = "container">
@@ -21,7 +58,8 @@ class Homescreen extends React.Component {
             </div>
           </div>
           <div className = "console">
-            <span className = "console-carrot">> </span><input className = "console-input" />
+            <div ref={(el) => {this.messagesEnd = el}} style={ {float:"left", clear: "both"} }></div>
+            <span className = "console-carrot">> </span><input className = "console-input" value = {this.state.expression} onChange = {(e)=> this.setState({expression: e.target.value})} onKeyPress = {this._handleKeyPress.bind(this)}/>
           </div>
         </div>
       </div>
