@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+ *:focus {
+     outline: none;
+ }
 
 .container {
   display: flex;
@@ -84,4 +86,25 @@
   background-color: #2B3D50;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
+  overflow: scroll;
+
+
+}
+
+.console-carrot {
+  font-size: 30px;
+  margin-right: 15px;
+}
+
+.console-input {
+  height: 30px;
+  width: 100%;
+  color: white;
+  font-size: 30px;
+  background-color: #2B3D50;
+  border: 0;
+  &:focus {
+   outline: none;
+   border: 0;
+  }
 }

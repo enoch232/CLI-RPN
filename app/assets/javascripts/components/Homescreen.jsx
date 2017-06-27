@@ -21,7 +21,7 @@ class Homescreen extends React.Component {
             </div>
           </div>
           <div className = "console">
-            <input></input>
+            <span className = "console-carrot">> </span><input className = "console-input" />
           </div>
         </div>
       </div>
