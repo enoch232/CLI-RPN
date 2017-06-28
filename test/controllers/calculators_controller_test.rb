@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class CalculatorsControllerTest < ActionDispatch::IntegrationTest
-  test "should get calculate" do
-    get calculators_calculate_url
+  test "should get index" do
+    get root_url
     assert_response :success
   end
 
