@@ -49,7 +49,7 @@ class Homescreen extends React.Component {
 
   render(){
     return (
-      <div className = "container">
+      <div className = "calculator-container">
         <div className = "title-container">
           CLI RPN Calculator
         </div>
