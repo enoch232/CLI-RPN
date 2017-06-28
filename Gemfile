@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'pg'
 gem 'pry'
 gem 'pry-nav'
 # Use Puma as the app server
@@ -29,8 +30,6 @@ gem 'react-rails'
 gem 'rubocop'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Use Uglifier as compressor for JavaScript assets
@@ -44,6 +43,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 group :development do
