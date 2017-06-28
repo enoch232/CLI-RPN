@@ -29,37 +29,31 @@ RSpec.describe CalculatorsController, type: :controller do
           response = post :evaluate, format: :json, params: { expression: '5 5 +', expression_type: ''}
         end
 
-        it 'returns with OK status' do
-          expect(response.status).to eq(200)
+        it 'returns with status 500' do
+          expect(response.status).to eq(500)
         end
 
-        it 'returns with a message with text Successfully calculated' do
-          expect(response.body).to include('Successfully calculated')
+        it 'returns with a message with text Unknown Expression Type' do
+          expect(response.body).to include('Unknown Expression Type')
         end
 
-        it 'returns with a correct RPN result' do
-          expect(response.body).to include(10.to_s)
-        end
       end
     end
 
     context 'with no expression type' do
       context 'with expression of 5 5 +' do
         before(:each) do
-          response = post :evaluate, format: :json, params: { expression: '5 5 +'}
+          response = post :evaluate, format: :json, params: { expression: '5 5 +' }
         end
 
-        it 'returns with OK status' do
-          expect(response.status).to eq(200)
+        it 'returns with status 500' do
+          expect(response.status).to eq(500)
         end
 
-        it 'returns with a message with text Successfully calculated' do
-          expect(response.body).to include('Successfully calculated')
+        it 'returns with a message with text Unknown Expression Type' do
+          expect(response.body).to include('Unknown Expression Type')
         end
 
-        it 'returns with a correct RPN result' do
-          expect(response.body).to include(10.to_s)
-        end
       end
     end
   end
