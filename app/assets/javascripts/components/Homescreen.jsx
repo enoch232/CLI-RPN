@@ -53,8 +53,8 @@ class Homescreen extends React.Component {
         <div className = "title-container">
           CLI Calculator
         </div>
-        <select value = {this.state.expressionType} class = "expression-type-select-box" onChange = {(e)=> this.setState({expressionType: e.target.value})}>
-          <option value = "RPN">RPN</option>
+        <select value = {this.state.expressionType} className = "expression-type-select-box" onChange = {(e)=> this.setState({expressionType: e.target.value})}>
+          <option value = "RPN">RPN mode</option>
         </select>
         <div className = "console-container">
           <div className = "tab">

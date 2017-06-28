@@ -4,11 +4,10 @@ class CalculatorsController < ApplicationController
   def home; end
 
   def evaluate
+    return render json: { message: 'Unknown Expression Type.', error: 'Unknown Expression Type.' }, status: :unprocessible_entity if params[:expression_type].blank?
     expression = case params[:expression_type]
                  when 'RPN'
                    RpnExpression.new(expression_params)
-                 else
-                   return render json: { message: 'Unknown Expression Type.', error: 'Unknown Expression Type.' }, status: :unprocessible_entity
                  end
     expression.result = expression.evaluate
     return render json: { message: 'Something went wrong saving the expression', error: expression.errors }, status: :unprocessible_entity unless expression.save

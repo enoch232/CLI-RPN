@@ -9,7 +9,7 @@ class RpnExpression < ApplicationRecord
     terminals = expression.split(' ')
 
     terminals.each do |terminal|
-      if is_number?(terminal)
+      if number?(terminal)
         @terminal_stack.push(terminal)
       elsif terminal == '+'
         parse_addition
