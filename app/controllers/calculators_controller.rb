@@ -10,7 +10,7 @@ class CalculatorsController < ApplicationController
     when "RPN"
       RpnExpression.new(expression_params)
     else
-      RpnExpression.new(expression_params)
+      return render json: { message: "Unknown Expression Type.", error: "Unknown Expression Type." }, status: :unprocessible_entity
     end
     expression.result = expression.evaluate
     return render json: { message: "Something went wrong saving the expression", error: expression.errors }, status: :unprocessible_entity unless expression.save
