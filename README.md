@@ -1,24 +1,53 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
+In order to get started:
 
-Things you may want to cover:
+Clone this repository by typing this command in the terminal:
+```
+git clone https://github.com/enoch232/CLI-RPN.git
+```
 
-* Ruby version
+As soon as you clone it, change directory to CLI-RPN, and then install bundler & install all dependency using bundler.
+```
+gem install bundler
+bundle install (or you can just type 'bundle')
+```
 
-* System dependencies
+Then install Ruby 2.3.1 in terminal. In order to do that, you can use RVM or RBENV.
 
-* Configuration
+Rbenv:
+```
+rbenv install 2.3.1
+rbenv local 2.3.1
+```
 
-* Database creation
+Rvm:
+```
+rvm install 2.3.1
+rvm 2.3.1
+```
 
-* Database initialization
+After cloning the repository into your workspace, create tables that are needed for rails app to run.
+```
+rake db:create
+```
 
-* How to run the test suite
+A last step before you run rails server, you need to perform a migration by:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+bundle exec rake db:migrate
+```
 
-* Deployment instructions
+Then, you can start the server by:
+```
+rails server (or you can just type 'rails s')
+```
 
-* ...
+You can now access the development server now
+through any browsers (preferably Chrome Browser) by going to address of:
+```
+http://localhost:3000/
+```
+
+Congratulations!
