@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def is_number? string
+  def number?(string)
     true if Float(string) rescue false
   end
 end
