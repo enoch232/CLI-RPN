@@ -6,7 +6,7 @@ RSpec.describe CalculatorsController, type: :controller do
     context 'with expression type of RPN' do
       context 'with expression of 5 5 +' do
         before(:each) do
-          post :evaluate, format: :json, params: { expression: '5 5 +', expression_type: 'RPN'}
+          post :evaluate, format: :json, params: { expression: '5 5 +', expression_type: 'RPN' }
         end
 
         it 'returns with OK status' do
@@ -26,7 +26,7 @@ RSpec.describe CalculatorsController, type: :controller do
     context 'with empty expression type' do
       context 'with expression of 5 5 +' do
         before(:each) do
-          post :evaluate, format: :json, params: { expression: '5 5 +', expression_type: ''}
+          post :evaluate, format: :json, params: { expression: '5 5 +', expression_type: '' }
         end
 
         it 'returns with status 422' do
