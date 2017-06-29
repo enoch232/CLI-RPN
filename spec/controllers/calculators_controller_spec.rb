@@ -6,11 +6,11 @@ RSpec.describe CalculatorsController, type: :controller do
     context 'with expression type of RPN' do
       context 'with expression of 5 5 +' do
         before(:each) do
-          response = post :evaluate, format: :json, params: { expression: '5 5 +', expression_type: 'RPN'}
+          post :evaluate, format: :json, params: { expression: '5 5 +', expression_type: 'RPN'}
         end
 
         it 'returns with OK status' do
-          expect(response.status).to eq(200)
+          expect(response).to have_http_status(200)
         end
 
         it 'returns with a message with text Successfully calculated' do
@@ -26,11 +26,11 @@ RSpec.describe CalculatorsController, type: :controller do
     context 'with empty expression type' do
       context 'with expression of 5 5 +' do
         before(:each) do
-          response = post :evaluate, format: :json, params: { expression: '5 5 +', expression_type: ''}
+          post :evaluate, format: :json, params: { expression: '5 5 +', expression_type: ''}
         end
 
-        it 'returns with status 500' do
-          expect(response.status).to eq(500)
+        it 'returns with status 422' do
+          expect(response).to have_http_status(422)
         end
 
         it 'returns with a message with text Unknown Expression Type' do
@@ -43,17 +43,16 @@ RSpec.describe CalculatorsController, type: :controller do
     context 'with no expression type' do
       context 'with expression of 5 5 +' do
         before(:each) do
-          response = post :evaluate, format: :json, params: { expression: '5 5 +' }
+          post :evaluate, format: :json, params: { expression: '5 5 +' }
         end
 
-        it 'returns with status 500' do
-          expect(response.status).to eq(500)
+        it 'returns with status 422' do
+          expect(response).to have_http_status(422)
         end
 
         it 'returns with a message with text Unknown Expression Type' do
           expect(response.body).to include('Unknown Expression Type')
         end
-
       end
     end
   end
