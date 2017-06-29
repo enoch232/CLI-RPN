@@ -140,6 +140,44 @@ http://localhost:3000/
 
 Congratulations!
 
+## API
+
+  ### Evaluate
+  Use this end point if you need to evaluate an expression.
+  
+  ```
+  POST '/evaluate'
+  ```
+  Required parameters are expression_type, and expression, to obtain the result. 
+
+  Current acceptable parameters are:
+  ```
+  expression (String): Expression that you want to evaluate.
+  expression_type (String): Expression type for this evaluation. Currently only "RPN" is supported.
+  ```
+
+  **Example:**
+
+  **Header:**
+    <br />
+    Accept: application/json
+    Content-Type: application/json
+    <br />
+  ***
+  ```
+  Post '/evaluate' with parameters: { "expression": "5 5 +", "expression_type": "RPN" }
+  ```
+
+  response:
+  ```
+  status: 200
+
+  {
+    "message" : "Successfully Calculated",
+    "result" : 10.0
+  }
+  ```
+
 
 ## Link to hosted application, CLI-RPN
 www.clirpn.com
