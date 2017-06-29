@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170621012305) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "rpn_expressions", force: :cascade do |t|
     t.string "expression"
     t.decimal "result"
