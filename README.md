@@ -87,6 +87,12 @@ For any other operations, or random characters, I made it return "Invalid Expres
 #### Expression Type Choices:
 Mobile app, and Web app do not retrieve available expression types. If I had more time, I would have implemented an API end point to obtain the list of expression types to fill up expression type list in the frontend.
 
+#### Error Logging:
+I have not included an error monitoring service for this application (in production), as this application is very small, and contains very small amount of Ruby code. Upon request, I can implement Airbrake.io, Bugsnag, or Sentry.io (My personal favorite) for this application.
+
+#### Task Management
+I have not included any task management application to track what needs to be done/fixed/tested/etc. If this application was a lot bigger, I would have used Jira to handle this.
+
 ## Traditional Setup
 
 In order to get started:
