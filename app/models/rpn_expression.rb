@@ -1,6 +1,4 @@
 class RpnExpression < ApplicationRecord
-  include ApplicationHelper
-
   validate :expression, :presence
   validate :result, :presence
 

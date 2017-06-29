@@ -1,13 +1,13 @@
 # README
 ## CLI-RPN
 
-### 1. High Level Description: 
+### 1. High Level Description:
 
 CLI-RPN is an application that evaluates Reverse Polish Notation Expressions. It currently has 4 basic operators: Addition, Subtraction, Multiplication, and Division. Modulo, and Power operators are coming soon as well.
 ### 2. Architecture/Technical Choices for this application:
 
 This application is a both web application, and an API (Application Program Interface).
-The design pattern I chose for this application is a modified version of Template Pattern (As described in Design Patterns in Ruby by Russell A. Olsen). It differs from the well known pattern by removal of inheritance of methods. Therefore, developers can easily add/remove different types of Expression Type (Polish Notaion, Infix and etc) to further increase calculator's functionality.
+The design pattern I chose for this application is a modified version of Template Pattern (As described in Design Patterns in Ruby by Russell A. Olsen). It differs from the well known pattern by removal of inheritance of methods. Therefore, developers can easily add/remove different types of Expression Type (Polish notation, Infix and etc) to further increase calculator's functionality.
 Because it's an API, it allows different applications, such as mobile applications to also evaluate Reverse Polish Notation Expression.
 ### 3. Technology Stack:
 
@@ -21,7 +21,7 @@ Reasons for choosing Sketch:
 Reasons for choosing React:
 1. Great support and community.
 2. Fast performance due to its efficiency
-3. Similar development approach for mobile applicationss (React-Native Apps)
+3. Similar development approach for mobile applications (React-Native Apps)
 
 #### Ruby on Rails for backend
 Reasons for choosing Ruby on Rails:
@@ -50,18 +50,18 @@ Reasons for choosing Heroku:
 #### Docker for development
 Reasons for choosing Docker:
 1. Ability to quickly get Rails app up and running quickly.
-2. Very portable 
+2. Very portable
 3. Quick deployment using EC2 Container Service (AWS) or other platforms.
 
 #### CloudFlare for HTTPS
 1. Free for small projects
 2. Very easy to set up
-3. Many configurations 
+3. Many configurations
 
 ### 4. Tradeoffs
 
-#### Deployment: 
-I chose Heroku for the deployment platform. Although AWS is cheaper in the long run, simplicity of Heroku to set up a server, and free cost of small instances (postgreSQL, EC2) outweight the benefits of using AWS for this scenario.
+#### Deployment:
+I chose Heroku for the deployment platform. Although AWS is cheaper in the long run, simplicity of Heroku to set up a server, and free cost of small instances (postgreSQL, EC2) outweigh the benefits of using AWS for this scenario.
 
 #### Design Pattern:
 There were few other good design patterns I would have used. However Template Pattern seemed to fit best due to its simplicity.
@@ -85,7 +85,7 @@ I have added Modulo, and Power operators as well, but made it raise "NotImplemen
 For any other operations, or random characters, I made it return "Invalid Expression"
 
 #### Expression Type Choices:
-Mobile app, and Web app do not retrieve available expression types. If I had more time, I would have implemented an API end point to obtain the list of expression types to fill up expressoin type list in the frontend.
+Mobile app, and Web app do not retrieve available expression types. If I had more time, I would have implemented an API end point to obtain the list of expression types to fill up expression type list in the frontend.
 
 ## Setup
 
@@ -144,11 +144,11 @@ Congratulations!
 
   ### Evaluate
   Use this end point if you need to evaluate an expression.
-  
+
   ```
   POST '/evaluate'
   ```
-  Required parameters are expression_type, and expression, to obtain the result. 
+  Required parameters are expression_type, and expression, to obtain the result.
 
   Current acceptable parameters are:
   ```
