@@ -1,4 +1,14 @@
 # README
+## CLI-RPN
+1. High Level Description: 
+CLI-RPN is an application that evaluates Reverse Polish Notation Expressions. It currently has 4 basic operators: Addition, Subtraction, Multiplication, and Division. Modulo, and Power operators are coming soon as well.
+2. Architecture/Technical Choices for this application:
+This application is a both web application, and an API (Application Program Interface). It uses ReactJS in the frontend to deliver a great user experience. In the backend it uses Ruby on Rails to implement new features very quickly.
+This application renders React UI from the server (Server-Side Rendering) and for any subsequent requests, it communicates through it's own API to get results for the evaluations.
+
+The architecture of this application is a modified version of Template Pattern. 
+
+
 
 ## Setup
 In order to get started:
