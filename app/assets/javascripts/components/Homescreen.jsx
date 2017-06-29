@@ -33,6 +33,7 @@ class Homescreen extends React.Component {
         } else if (responseJson.error){
           alert(responseJson.message)
         } else {
+          console.log(responseJson)
           alert("Something went wrong!")
         }
       }).catch((error)=>{

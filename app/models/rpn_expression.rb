@@ -19,12 +19,20 @@ class RpnExpression < ApplicationRecord
         parse_multiplication
       elsif terminal == '/'
         parse_division
+      elsif terminal == '%'
+        parse_modulo
+      elsif terminal == '**'
+        parse_power
       end
     end
     @terminal_stack.pop
   end
 
   private
+
+  def number?(string)
+    true if Float(string) rescue false
+  end
 
   def parse_addition
     second_terminal = @terminal_stack.pop
@@ -49,5 +57,13 @@ class RpnExpression < ApplicationRecord
     first_terminal = @terminal_stack.pop
     raise ZeroDivisionError if second_terminal.to_f.zero?
     @terminal_stack.push(first_terminal.to_f / second_terminal.to_f)
+  end
+
+  def parse_modulo
+    raise NotImplementedError, "modulo"
+  end
+
+  def parse_power
+    raise NotImplementedError, "power"
   end
 end

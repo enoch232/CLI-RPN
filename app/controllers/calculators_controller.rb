@@ -14,6 +14,8 @@ class CalculatorsController < ApplicationController
     render json: { message: 'Successfully calculated', result: expression.result }, status: :ok
     rescue ZeroDivisionError => e
       return render json: { message: 'You cannot divide a finite number by zero.', error: e }, status: :unprocessible_entity
+    rescue NotImplementedError => e
+      return render json: { message: "#{e.message.capitalize} operation is coming soon!", error: "#{e.message.capitalize} operation is coming soon!" }, status: :unprocessible_entity
     rescue => e
       return render json: { message: 'Something went wrong saving the expression', error: e }, status: :unprocessible_entity
   end
