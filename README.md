@@ -11,49 +11,49 @@ The design pattern I chose for this application is a modified version of Templat
 Because it's an API, it allows different applications, such as mobile applications to also evaluate Reverse Polish Notation Expression.
 ### 3. Technology Stack:
 
-Sketch for designing
+#### Sketch for designing
 Reasons for choosing Sketch:
 1. Easy to use.
 2. Built for designing mobile/web applications
 3. Only $99 ($49 for students) one-time purchase
 
-React for frontend
+#### React for frontend
 Reasons for choosing React:
 1. Great support and community.
 2. Fast performance due to its efficiency
 3. Similar development approach for mobile applicationss (React-Native Apps)
 
-Ruby on Rails for backend
+#### Ruby on Rails for backend
 Reasons for choosing Ruby on Rails:
 1. One of the fastest framework to build prototypes
 2. Elegant code
 3. Library options (Gems)
 
-PostgreSQL for database
+#### PostgreSQL for database
 Reasons for choosing Postgres:
 1. Battle-tested
 2. Advanced datatypes (ie. Array)
 3. Implements SQL standards very well
 
-CircleCI for Continuous Integration
+#### CircleCI for Continuous Integration
 Reasons for choosing CircleCI
 1. No need to manually deploy
 2. Runs test in separate parallel environments
 3. Integrates with GitHub (indicator in GitHub to show if tests passed/failed)
 
-Heroku for deployment
+#### Heroku for deployment
 Reasons for choosing Heroku:
 1. Very quick and simple to deploy Rails application
 2. Free/Cheap cost for small projects
 3. Easy integration with CircleCI
 
-Docker for development
+#### Docker for development
 Reasons for choosing Docker:
 1. Ability to quickly get Rails app up and running quickly.
 2. Very portable 
 3. Quick deployment using EC2 Container Service (AWS) or other platforms.
 
-CloudFlare for HTTPS
+#### CloudFlare for HTTPS
 1. Free for small projects
 2. Very easy to set up
 3. Many configurations 
@@ -139,3 +139,7 @@ http://localhost:3000/
 ```
 
 Congratulations!
+
+
+## Link to hosted application, CLI-RPN
+www.clirpn.com
