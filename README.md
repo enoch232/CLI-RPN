@@ -159,10 +159,10 @@ Congratulations!
   **Example:**
 
   **Header:**
-    <br />
+  ```
     Accept: application/json
     Content-Type: application/json
-    <br />
+  ```
   ***
   ```
   Post '/evaluate' with parameters: { "expression": "5 5 +", "expression_type": "RPN" }
@@ -179,5 +179,5 @@ Congratulations!
   ```
 
 
-## Link to hosted application, CLI-RPN
+## Link to the hosted application, CLI-RPN
 www.clirpn.com
