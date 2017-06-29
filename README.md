@@ -87,7 +87,7 @@ For any other operations, or random characters, I made it return "Invalid Expres
 #### Expression Type Choices:
 Mobile app, and Web app do not retrieve available expression types. If I had more time, I would have implemented an API end point to obtain the list of expression types to fill up expression type list in the frontend.
 
-## Setup
+## Traditional Setup
 
 In order to get started:
 
@@ -124,7 +124,7 @@ rake db:create
 A last step before you run rails server, you need to perform a migration by:
 
 ```
-bundle exec rake db:migrate
+rake db:migrate
 ```
 
 Then, you can start the server by:
@@ -133,13 +133,42 @@ rails server (or you can just type 'rails s')
 ```
 
 You can now access the development server now
-through any browsers (preferably Chrome Browser) by going to address of:
+through any browsers by going to address of:
 ```
 http://localhost:3000/
 ```
 
 Congratulations!
 
+## Docker Setup
+
+Now, if you want to develop this application using Docker,
+
+First, copy the content of config/database.docker.yml to config/database.yml, so that development's host is "db" instead of "localhost". Save.
+
+Secondly, make sure you install Docker App. Start Docker.
+
+Then, Type command:
+```
+docker-compose up
+```
+
+This should start the build process. Should take about 3 - 5 minutes.
+
+After it's completed, run:
+```
+docker-compose run web rake db:create
+docker-compose run web rake db:migrate
+```
+This two commands will create and migrate the database.
+
+You can now access the development server now
+through any browsers by going to address of:
+```
+http://localhost:3000/
+```
+
+Congratulations!
 ## API
 
   ### Evaluate
