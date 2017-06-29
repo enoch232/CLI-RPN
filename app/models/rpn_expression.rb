@@ -6,6 +6,7 @@ class RpnExpression < ApplicationRecord
 
   def evaluate
     @terminal_stack = Stack.new
+    raise SyntaxError if expression.empty?
     terminals = expression.split(' ')
 
     terminals.each do |terminal|
