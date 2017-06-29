@@ -1,12 +1,15 @@
 # README
 ## CLI-RPN
-1. High Level Description: 
+
+### 1. High Level Description: 
+
 CLI-RPN is an application that evaluates Reverse Polish Notation Expressions. It currently has 4 basic operators: Addition, Subtraction, Multiplication, and Division. Modulo, and Power operators are coming soon as well.
-2. Architecture/Technical Choices for this application:
+### 2. Architecture/Technical Choices for this application:
+
 This application is a both web application, and an API (Application Program Interface).
-The design pattern I chose for this application is a modified version of Template Pattern. It differs from the well known pattern by removal of inheritance of methods. Therefore, developers can easily add/remove different types of Expression Type (Polish Notaion, Infix and etc) to further increase it's functionality.
-Because it's an API, it allows different apps, such as, mobile applications to also evaluate Reverse Polish Notation Expression.
-3. Technology Stack:
+The design pattern I chose for this application is a modified version of Template Pattern (As described in Design Patterns in Ruby by Russell A. Olsen). It differs from the well known pattern by removal of inheritance of methods. Therefore, developers can easily add/remove different types of Expression Type (Polish Notaion, Infix and etc) to further increase calculator's functionality.
+Because it's an API, it allows different applications, such as mobile applications to also evaluate Reverse Polish Notation Expression.
+### 3. Technology Stack:
 
 Sketch for designing
 Reasons for choosing Sketch:
@@ -55,8 +58,16 @@ CloudFlare for HTTPS
 2. Very easy to set up
 3. Many configurations 
 
+### Tradeoffs
+
+Deployment: 
+I chose Heroku for the deployment platform. Although AWS is cheaper in the long run, simplicity of Heroku to set up a server, and free cost of small instances (postgreSQL, EC2) outweight the benefits of using AWS for this scenario.
+
+Design Pattern:
+
 
 ## Setup
+
 In order to get started:
 
 Clone this repository by typing this command in the terminal:
