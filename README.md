@@ -3,11 +3,57 @@
 1. High Level Description: 
 CLI-RPN is an application that evaluates Reverse Polish Notation Expressions. It currently has 4 basic operators: Addition, Subtraction, Multiplication, and Division. Modulo, and Power operators are coming soon as well.
 2. Architecture/Technical Choices for this application:
-This application is a both web application, and an API (Application Program Interface). It uses ReactJS in the frontend to deliver a great user experience. In the backend it uses Ruby on Rails to implement new features very quickly.
-This application renders React UI from the server (Server-Side Rendering) and for any subsequent requests, it communicates through it's own API to get results for the evaluations.
+This application is a both web application, and an API (Application Program Interface).
+The design pattern I chose for this application is a modified version of Template Pattern. It differs from the well known pattern by removal of inheritance of methods. Therefore, developers can easily add/remove different types of Expression Type (Polish Notaion, Infix and etc) to further increase it's functionality.
+Because it's an API, it allows different apps, such as, mobile applications to also evaluate Reverse Polish Notation Expression.
+3. Technology Stack:
 
-The architecture of this application is a modified version of Template Pattern. 
+Sketch for designing
+Reasons for choosing Sketch:
+1. Easy to use.
+2. Built for designing mobile/web applications
+3. Only $99 ($49 for students) one-time purchase
 
+React for frontend
+Reasons for choosing React:
+1. Great support and community.
+2. Fast performance due to its efficiency
+3. Similar development approach for mobile applicationss (React-Native Apps)
+
+Ruby on Rails for backend
+Reasons for choosing Ruby on Rails:
+1. One of the fastest framework to build prototypes
+2. Elegant code
+3. Library options (Gems)
+
+PostgreSQL for database
+Reasons for choosing Postgres:
+1. Battle-tested
+2. Advanced datatypes (ie. Array)
+3. Implements SQL standards very well
+
+CircleCI for Continuous Integration
+Reasons for choosing CircleCI
+1. No need to manually deploy
+2. Runs test in separate parallel environments
+3. Integrates with GitHub (indicator in GitHub to show if tests passed/failed)
+
+Heroku for deployment
+Reasons for choosing Heroku:
+1. Very quick and simple to deploy Rails application
+2. Free/Cheap cost for small projects
+3. Easy integration with CircleCI
+
+Docker for development
+Reasons for choosing Docker:
+1. Ability to quickly get Rails app up and running quickly.
+2. Very portable 
+3. Quick deployment using EC2 Container Service (AWS) or other platforms.
+
+CloudFlare for HTTPS
+1. Free for small projects
+2. Very easy to set up
+3. Many configurations 
 
 
 ## Setup
