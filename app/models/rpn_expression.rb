@@ -23,6 +23,8 @@ class RpnExpression < ApplicationRecord
         parse_modulo
       elsif terminal == '**'
         parse_power
+      else
+        raise SyntaxError
       end
     end
     @terminal_stack.pop
