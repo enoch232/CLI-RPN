@@ -58,13 +58,34 @@ CloudFlare for HTTPS
 2. Very easy to set up
 3. Many configurations 
 
-### Tradeoffs
+### 4. Tradeoffs
 
-Deployment: 
+#### Deployment: 
 I chose Heroku for the deployment platform. Although AWS is cheaper in the long run, simplicity of Heroku to set up a server, and free cost of small instances (postgreSQL, EC2) outweight the benefits of using AWS for this scenario.
 
-Design Pattern:
+#### Design Pattern:
+There were few other good design patterns I would have used. However Template Pattern seemed to fit best due to its simplicity.
+Strategy pattern was another good fit, by creating a Expression model, and making Rpn a type model instead.
+Then evaluating would have looked like:
+```
+expression = Expression.new(Rpn.new, "5 5 +")
+expression.evaluate
+...
+..
+.
+```
 
+#### Expression Types:
+I have added RPN Expression as the only expression type, because the purpose of this application was to evaluate RPN.
+Anyone should be able to add different expression types by creating "evaluate" class instance method in the class.
+So if you want to add Polish Notation Expression type, they can make a new model, and add "evaluate" method. Then you can fill up the evaluate method to do the correct algorithm for that expression type.
+
+#### Operators:
+I have added Modulo, and Power operators as well, but made it raise "NotImplementedError".
+For any other operations, or random characters, I made it return "Invalid Expression"
+
+#### Expression Type Choices:
+Mobile app, and Web app do not retrieve available expression types. If I had more time, I would have implemented an API end point to obtain the list of expression types to fill up expressoin type list in the frontend.
 
 ## Setup
 
