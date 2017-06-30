@@ -4,6 +4,9 @@
 ### 1. High Level Description:
 
 CLI-RPN is an application that evaluates Reverse Polish Notation Expressions. It currently has 4 basic operators: Addition, Subtraction, Multiplication, and Division. Modulo, and Power operators are coming soon as well.
+
+In order to calculate, make sure to put the expression in one line, like "5 5 + 3 -".
+
 ### 2. Architecture/Technical Choices for this application:
 
 This application is a both web application, and an API (Application Program Interface).
