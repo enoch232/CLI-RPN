@@ -77,6 +77,7 @@ expression.evaluate
 ..
 .
 ```
+Also something to note is that, Stack class may look like just a reimplementation of Array. However, by creating a new class Stack, any developers should be able to add new methods to Stack, such as "peek", and error handling when stack is empty/full.
 
 #### Expression Types:
 I have added RPN Expression as the only expression type, because the purpose of this application was to evaluate RPN.
